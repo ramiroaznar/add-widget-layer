@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>How to add a custom widget and layer</title>
+    <meta name=viewport content="width=device-width initial-scale=1">
+    <link href="http://cartodb.com/favicon.ico" rel="shortcut icon" />
+    <link rel="stylesheet" href="./themes/css/deep-insights.css" />
+    <link rel="stylesheet" href="./themes/css/myapp.css" />
+    <script src="./scripts/deep-insights.uncompressed.js"></script>
+    <script src="./scripts/myapp.js"></script>
+</head>
+
+<body>
+
+    <!--    Dashboard container -->
+    <div class="Dashboard-canvas" id="dashboard"></div>
+
+
+    <!--   Style  -->
+    <style type="cartocss/text" id="style">
+        #layer {
+          polygon-fill: ramp([field], (#E4F1E1, #9CCDC1, #63A6A0, #337F7F, #0D585F), quantiles);
+          line-width: 0.2;
+          line-color: #fff;
+          line-opacity: 1;
+          polygon-opacity: 0.7;
+        }
+    </style>
+
+        <!--    Custom widget -->
+    <div class="CDB-Widget CDB-Widget--light" id='mywidget'>
+        <div class="CDB-Loader"></div>
+        <div class="CDB-Widget-error is-hidden">
+            <button class="CDB-Widget-button CDB-Widget-errorButton js-refresh"> <span class="CDB-Widget-textSmall CDB-Widget-textSmall--bold">REFRESH</span> </button>
+        </div>
+        <div class="CDB-Widget-body">
+            <div class="CDB-Widget-header js-header">
+                <div class="CDB-Widget-title CDB-Widget-contentSpaced">
+                    <h3 class="CDB-Text CDB-Size-large u-ellipsis js-title">Style blocks by field</h3>
+                    <br>
+                </div>
+            </div>
+            <div class="CDB-Widget-content">
+                    <select name="select" class="CDB-SelectFake CDB-Text" id='selector'> <option value="reset" selected>Total Population</option>
+                      <option value="unemp">Unemployed Population</option>
+                      <option value="bach">Bachelors Population</option>
+                    </select>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

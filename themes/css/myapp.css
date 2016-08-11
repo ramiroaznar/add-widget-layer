@@ -1,0 +1,17 @@
+html,
+body {
+    position: relative;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans';
+    overflow: hidden;
+}
+.CDB-Widget-content {
+	margin-top: 12px;
+}
+.CDB-SelectFake CDB-Text {
+	width: 160px; display: flex !important; 
+	align-items: center; 
+	align-content: space-between;
+}
